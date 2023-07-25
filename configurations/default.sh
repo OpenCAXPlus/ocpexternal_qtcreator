@@ -8,6 +8,7 @@ root="$script_dir/.."
 source_dir="$script_dir/../source"
 build_dir="$script_dir/../build/$config"
 install_dir="$script_dir/../install/$config"
+qt_dir="$HOME/ocp/external/qt/6.3.0/install"
 
-cmake -S $source_dir -B $build_dir -DCMAKE_INSTALL_PREFIX=$install_dir -G Ninja
+cmake -S $source_dir -B $build_dir -DCMAKE_INSTALL_PREFIX=$install_dir -G Ninja -DCMAKE_PREFIX_PATH=$qt_dir
 cmake --build $build_dir --target install
